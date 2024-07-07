@@ -4,8 +4,8 @@ const gallery = document.querySelector('.gallery')
 form.addEventListener('submit', handlerForm)
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-// import SimpleLightbox from "simplelightbox";
-// import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 
@@ -23,7 +23,7 @@ function getPicturesByQuery(query) {
     return res.json();
   });
 }
-
+   
 
 
 function handlerForm (evt){
@@ -44,9 +44,22 @@ function renderImage(images) {
       }
       else {
     const listItems = images
-    .map(({webformatURL, tags}) => `<li class="list-group-item"><img src='${webformatURL}' alt='${tags}'/></li>`)
+    .map(({largeImageURL, webformatURL, tags, likes, views, comments, downloads}) => `<li class="list">
+  <a href="${largeImageURL}">
+    <img src='${webformatURL}' alt='${tags}'/>
+    <div class="item-wrap">
+    <h2 class="item-text">Like<p>${likes}</p></h2>
+    <h2 class="item-text">Views<p>${views}</p></h2>
+    <h2 class="item-text">Comments<p>${comments}</p></h2>
+    <h2 class="item-text">Downloads<p>${downloads}</p></h2>
+  </div>
+  </li>`)
     .join("");
 
   gallery.innerHTML = listItems;
+  lightbox = new SimpleLightbox('.gallery a', {docClose: true,
+    close: true,
+  });
+  lightbox.refresh();
   }}
   
