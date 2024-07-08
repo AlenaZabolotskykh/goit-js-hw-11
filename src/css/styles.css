@@ -76,6 +76,48 @@ color: #2e2f42;
 
 form {
   margin-bottom: 20px;
+  display: flex;
+ justify-content: center;
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+width: 272px;
+height: 40px;
+font-family: var(--font-family);
+line-height: 150%;
+letter-spacing: 0.04em;
+color: #808080;
+padding-left: 16px;
+}
+
+input:hover {
+  border: 1px solid #000;
+}
+
+input:pressed {
+  border: 1px solid #4e75ff;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+padding: 8px 16px;
+width: 91px;
+height: 40px;
+background-color: #4e75ff;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.04em;
+color: #fff;
+margin-left: 8px;
+}
+
+button:hover {
+  background-color: #6c8cff;
 }
 
 .loader {
