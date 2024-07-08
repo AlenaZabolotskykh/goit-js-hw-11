@@ -76,6 +76,7 @@ color: #2e2f42;
 
 form {
   margin-bottom: 20px;
+  margin-top: 50px;
   display: flex;
  justify-content: center;
 }
@@ -90,6 +91,7 @@ line-height: 150%;
 letter-spacing: 0.04em;
 color: #808080;
 padding-left: 16px;
+
 }
 
 input:hover {
@@ -126,7 +128,7 @@ button:hover {
   border: 5px solid #FFF;
   border-bottom-color: #FF3D00;
   border-radius: 50%;
-  display: inline-block;
+  display: none;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
   }
