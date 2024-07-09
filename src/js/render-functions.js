@@ -4,6 +4,10 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 const gallery = document.querySelector('.gallery')
 
+ let lightbox = new SimpleLightbox('.gallery a', 
+    {docClose: true,
+    close: true,})
+    
 export function renderImage(images) {
     if (images.length === 0) {
         iziToast.show({
@@ -26,8 +30,8 @@ export function renderImage(images) {
     .join("");
 
   gallery.innerHTML = listItems;
-  lightbox = new SimpleLightbox('.gallery a', {docClose: true,
-    close: true,
-  });
-  lightbox.refresh();
+if (lightbox){
+  lightbox.refresh();}
   }}
+
+ 
