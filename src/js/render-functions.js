@@ -7,7 +7,7 @@ const gallery = document.querySelector('.gallery')
  let lightbox = new SimpleLightbox('.gallery a', 
     {docClose: true,
     close: true,})
-    
+
 export function renderImage(images) {
     if (images.length === 0) {
         iziToast.show({
@@ -32,6 +32,7 @@ export function renderImage(images) {
   gallery.innerHTML = listItems;
 if (lightbox){
   lightbox.refresh();}
+  else {lightbox}
   }}
 
  
