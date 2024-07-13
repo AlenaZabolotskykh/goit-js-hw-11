@@ -10,19 +10,20 @@ const loader = document.querySelector('.loader')
 form.addEventListener('submit', handlerForm)
 
 function handlerForm (evt){
-    evt.preventDefault()
-    gallery.innerHTML = "";
-   const inputValue = form.elements.search.value.trim();
-   if (!inputValue) {
-    iziToast.error({
-      title: 'Рядок не може бути пустим',
-    });
-    return;}
-     loader.style.display = 'block';
+  evt.preventDefault()
+  gallery.innerHTML = "";
+ const inputValue = form.elements.search.value.trim();
+ if (!inputValue) {
+  iziToast.error({
+    title: 'Рядок не може бути пустим',
+  });
+  return;}
+  loader.style.display = 'block';
 getPicturesByQuery(inputValue)
-.then(data => {renderImage(data.hits),
-    loader.style.display = 'none'
+.then(data => {renderImage(data.hits)
 })
 .catch((err)=>console.log(err))
- loader.style.display = 'none'
+.finally(() => {
+loader.style.display = 'none'
+})
 }
